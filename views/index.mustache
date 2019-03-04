@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/app.css">
+  </head>
+<body>
+<form method="post" action="/">
+  {{#error}}
+    <div>{{error}}</div>
+  {{/error}}
+
+  <p>Login with the user/passwords available in the config.js file</p>
+
+  <div>
+    <label for="login">User:</label>
+    <input type="text" id="login" name="login" value="johndoe">
+  </div>
+
+  <div>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" value="password">
+  </div>
+
+  <input type="submit" value="Login">
+</form>
+</body>
+</html>
