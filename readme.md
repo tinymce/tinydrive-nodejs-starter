@@ -24,11 +24,12 @@ You get the api key from the `API Key Manager` account manager at http://tiny.cl
 
 You get the private RSA key from the `JWT Key Manager` account manager at http://tiny.cloud.
 
-### 4. Go to the directory and start the dev server
+### 4. Go to the directory and install npm packages and then start the dev server
 
 ```
 $ cd tinydrive-nodejs-starter
-$ node index.js
+$ npm i
+$ npm run start
 ```
 
 ### 5. Open the example project at http://localhost:3000

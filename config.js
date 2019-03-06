@@ -2,7 +2,7 @@
 exports.apiKey = 'your-api-key';
 
 // Replace the contents of the private.key file with the one from the "JWT Key Manager" at the tiny.cloud account page
-exports.privateKeyFile = ``;
+exports.privateKeyFile = './private.key';
 
 // This is the fake database that the login authenticates against
 exports.users = [
