@@ -6,21 +6,21 @@ This project will help you get started with Tiny Drive and allow you to play aro
 
 NodeJS 11 on any supported platform.
 
-These are the steps needed to get this project running on your machine:
-
 ## Getting started steps
 
 ### 1. Clone this repo to your local machine using
 
+These are the steps needed to get this project running on your machine:
+
 ```
-$ git clone git@github.com:tinymce/tinydrive-nodejs-starter.git
+$ git clone git@github.com:tinymce/tinydrive-java-spring-starter.git
 ```
 
-### 2. Change the `apiKey` in `config.js`
+### 2. Change the `apiKey` in `tinydrive-nodejs-starter/config.js`
 
 You get the api key from the `API Key Manager` account manager at http://tiny.cloud.
 
-### 3. Replace the `private.key` file with your generated private RSA key 
+### 3. Create a `tinydrive-nodejs-starter/private.key` file containing your generated private RSA key
 
 You get the private RSA key from the `JWT Key Manager` account manager at http://tiny.cloud.
 

@@ -4,6 +4,7 @@ const portfinder = require('portfinder');
 const session = require('express-session');
 const jwt = require('jsonwebtoken');
 const config = require('./config');
+const fs = require('fs');
 
 const setupExpress = (port) => {
   const app = express();
@@ -35,7 +36,7 @@ const setupRoutes = (app) => {
 
   app.get('/editor', (req, res) => {
     if (req.session.user) {
-      res.render('editor', { apiKey: config.apiKey, user: req.session.user });
+      res.render('editor', { apiKey: config.apiKey, username: req.session.user.name });
     } else {
       res.redirect('/');
     }
@@ -50,23 +51,24 @@ const setupRoutes = (app) => {
     const user = req.session.user;
     if (user) {
       const payload = {
-        sub: user.login,        // Unique user id string
-        name: user.name,        // Full name of user
+        sub: user.username,        // Unique user id string
+        name: user.fullname,       // Full name of user
         exp: Math.floor(Date.now() / 1000) + (60 * 10) // 10 minutes expiration
       };
 
       // Scopes the path to a specific user directory
       if (config.scopeUser) {
-        payload['https://claims.tiny.cloud/drive/root'] = `/${user.login}`;
+        payload['https://claims.tiny.cloud/drive/root'] = `/${user.username}`;
       }
 
       try {
-        const privateKey = fs.readFileSync(config.privateKeyFile);
+        const privateKey = fs.readFileSync(config.privateKeyFile).toString();
         const token = jwt.sign(payload, privateKey, { algorithm: 'RS256'});
         res.json({ token });
       } catch (e) {
         res.status(500);
         res.send('Failed generate jwt token.');
+        console.error(e.message);
       }
     } else {
       res.status(401);
@@ -75,7 +77,7 @@ const setupRoutes = (app) => {
   });
 
   app.post('/', (req, res) => {
-    const user = config.users.find(({ login, password }) => login === req.body.login && password === req.body.password);
+    const user = config.users.find(({ username, password }) => username === req.body.username && password === req.body.password);
     if (user) {
       req.session.user = user;
       res.redirect('/editor');
