@@ -56,7 +56,8 @@ const setupRoutes = (app) => {
         exp: Math.floor(Date.now() / 1000) + (60 * 10) // 10 minutes expiration
       };
 
-      // Scopes the path to a specific user directory
+      // When this is set the user will only be able to manage and see files in the specified root
+      // directory. This makes it possible to have a dedicated home directory for each user.
       if (config.scopeUser) {
         payload['https://claims.tiny.cloud/drive/root'] = `/${user.username}`;
       }
