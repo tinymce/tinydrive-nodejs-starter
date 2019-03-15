@@ -36,7 +36,7 @@ const setupRoutes = (app) => {
 
   app.get('/editor', (req, res) => {
     if (req.session.user) {
-      res.render('editor', { apiKey: config.apiKey, username: req.session.user.name });
+      res.render('editor', { apiKey: config.apiKey, fullname: req.session.user.fullname });
     } else {
       res.redirect('/');
     }
