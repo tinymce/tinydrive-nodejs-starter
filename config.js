@@ -1,5 +1,5 @@
 // Replace this with your api key from the "API Key Manager" at the tiny.cloud account page
-exports.apiKey = '0u7ewodzfullt54r03xqrer202glzi0768zyetkrkoa42nag';
+exports.apiKey = 'your-api-key-here';
 
 // Replace the contents of the private.key file with the one from the "JWT Key Manager" at the tiny.cloud account page
 exports.privateKeyFile = './private.key';
