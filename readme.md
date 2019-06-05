@@ -13,7 +13,7 @@ NodeJS 11 on any supported platform.
 These are the steps needed to get this project running on your machine:
 
 ```
-$ git clone git@github.com:tinymce/tinydrive-nodejs-starter.git
+$ git clone https://github.com/tinymce/tinydrive-nodejs-starter.git
 ```
 
 ### 2. Change the `apiKey` in `tinydrive-nodejs-starter/config.js`
