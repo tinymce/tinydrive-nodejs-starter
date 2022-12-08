@@ -11,7 +11,7 @@
   "author": "Tiny Technologies Inc",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "express-session": "^1.15.6",
     "jsonwebtoken": "^8.5.0",
     "mustache-express": "^1.2.8",
