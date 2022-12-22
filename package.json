@@ -13,7 +13,7 @@
   "dependencies": {
     "express": "^4.16.4",
     "express-session": "^1.15.6",
-    "jsonwebtoken": "^8.5.0",
+    "jsonwebtoken": "^9.0.0",
     "mustache-express": "^1.2.8",
     "portfinder": "^1.0.20"
   }
